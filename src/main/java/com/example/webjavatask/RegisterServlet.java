@@ -2,7 +2,6 @@ package com.example.webjavatask;
 
 import java.io.*;
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -28,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/conference", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/participants", "root", "password");
 
             PreparedStatement ps = con.prepareStatement(
                     "insert into participants(name,email,phone,password,address,gender) values(?,?,?,?,?,?)");
